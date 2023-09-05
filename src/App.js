@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap"
 import Filters from "./components/Filters/Filters";
 import Cards from "./components/Cards/Cards";
+import Pagination from "./components/Pagination/Pagination";
+import Search from "./components/Search/Search";
 
 function App() {
   let [pageNumber, setPageNumber] = useState(1);
@@ -22,6 +24,7 @@ function App() {
     <div className="my-4">
     <h1 className="text-center">Rick & Morty</h1>
     <div className="container">
+      <div><Search /></div>
       <div className="row">
         <div className="col-3">
           <Filters />
@@ -32,7 +35,10 @@ function App() {
           </div>
         </div>
       </div>
+    </div>  
+    <div>
     </div>
+    <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
     </div>
   );
 }

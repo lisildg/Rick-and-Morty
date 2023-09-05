@@ -1,0 +1,8 @@
+.button{
+    background-color: #1ba2f6;
+}
+.input{
+    width: 80%;
+    border-radius: 8px;
+    border: 2px solid  #1ba2f6;
+}
