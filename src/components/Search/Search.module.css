@@ -1,8 +1,12 @@
 .button{
     background-color: #1ba2f6;
+    box-shadow: 1px 1px 5px ;
 }
 .input{
     width: 80%;
     border-radius: 8px;
     border: 2px solid  #1ba2f6;
+    padding: 10px 15px;
+    box-shadow: 1px 1px 5px ;
+    outline: off;
 }
