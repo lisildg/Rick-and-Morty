@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import styles from './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap"
 import Filters from "./components/Filters/Filters";
@@ -9,10 +10,13 @@ import Search from "./components/Search/Search";
 function App() {
   let [pageNumber, setPageNumber] = useState(1);
   let [fetchData, updateFetchData] = useState([]);
-  let {info, results} = fetchData;
+  let  [status, setStatus] = useState("")
   let [search, setSearch] = useState("");
+  let [gender, setGender]=useState("");
+  let [species, setSpecies]= useState("");
+  let {info, results} = fetchData;
  
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(()=>{
     (async function(){
@@ -22,14 +26,14 @@ function App() {
   },[api]);
 
   return (
-    <div className="my-4">
+    <div className={`${styles.bg} my-4`}>
     <h1 className="text-center">Rick & Morty</h1>
     <div className="container">
       <div><Search setPageNumber={setPageNumber} setSearch ={setSearch}/></div>
       <div className="row">
-        <div className="col-3">
-          <Filters />
-          </div>
+        
+          <Filters setStatus ={setStatus} setSpecies={setSpecies} setPageNumber={setPageNumber} setGender={setGender}/>
+          
         <div className="col-8">
           <div>
             <Cards results={results} />

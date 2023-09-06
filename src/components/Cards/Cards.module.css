@@ -1,0 +1,15 @@
+.card{
+    border: 2px solid #1ba2f6;
+    border-radius: 20px;
+}
+.badge{
+    top:19px;
+    right: 20px;
+    font-size: 17px;
+    background-color: #3cf281;
+}
+.name{
+    top: 50px;
+    right: 50px;
+    font-size: 17px;
+}
