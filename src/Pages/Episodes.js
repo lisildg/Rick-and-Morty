@@ -25,7 +25,7 @@ const Episodes = () => {
   }, [api])
   return (
     <div className='conteiner'>
-      <div className='row mb-4'>
+      <div className='row mb-3'>
         <h1 className='text-center mb-3'>
           Episode: {name ==="" ? "Unknoun" : name}
         </h1>
@@ -34,7 +34,7 @@ const Episodes = () => {
         </h5>
       </div>
       <div className='row'>
-        <div className='col-lg-3 col-4 '>
+        <div className='col-lg-3 col-12 mb-4 '>
           <h4 className='text-center mb-4'>
           Pick episodes
           </h4>
