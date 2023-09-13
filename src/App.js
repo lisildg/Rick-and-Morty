@@ -10,6 +10,9 @@ import NavBar from "./components/NavBar/NavBar";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Episodes from "./Pages/Episodes";
 import Location from "./Pages/Location";
+import CardDetail from "./components/Cards/CardDetail";
+import 'bootswatch/dist/superhero/bootstrap.min.css';
+
 
 function App(){
 
@@ -22,6 +25,9 @@ function App(){
         <Route path="/" element={<Home/>} />
         <Route path="/episodes" element={<Episodes/>} />
         <Route path="/location" element={<Location/>} />
+        <Route path="/location/:id" element={<CardDetail />} />
+        <Route path="/:id" element={<CardDetail />} />
+        <Route path="/episodes/:id" element={<CardDetail />} />
       </Routes>
     </Router>
   )
@@ -56,9 +62,9 @@ const Home =() =>{
         
           <Filters setStatus ={setStatus} setSpecies={setSpecies} setPageNumber={setPageNumber} setGender={setGender}/>
           
-        <div className="col-8">
+        <div className="col-lg-8 col-12">
           <div>
-            <Cards results={results} />
+            <Cards page="/" results={results} />
           </div>
         </div>
       </div>
