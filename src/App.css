@@ -1,3 +1,13 @@
 .bg{
     background-color: #6610f2;;
 }
+a{
+    text-decoration: none;
+}
+.active{
+    border-bottom: 3px solid #6610f2;
+    font-weight: bold  ;
+    color:#6610f2;
+}
+
+  
