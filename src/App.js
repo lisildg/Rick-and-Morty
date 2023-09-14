@@ -63,7 +63,7 @@ const Home =() =>{
           <Filters setStatus ={setStatus} setSpecies={setSpecies} setPageNumber={setPageNumber} setGender={setGender}/>
           
         <div className="col-lg-8 col-12">
-          <div>
+          <div className="row">
             <Cards page="/" results={results} />
           </div>
         </div>

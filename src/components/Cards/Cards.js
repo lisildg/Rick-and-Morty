@@ -10,17 +10,20 @@ const Cards = ({ results, page }) => {
       let { id, name, image, status, species, gender, origin, location } = ele;
       return (
         <Link
+        style={{textDecoration: "none"}}
           to={`${page}${id}`}
           key={id}
-          className={`${styles.cards} col-lg-4 col-md-6 col-12 position-relative text-dark`}
+          className={`${styles.card} col-lg-4 col-md-6 col-sm-6 col-12 position-relative text-dark`}
         >
-          <div className={`${styles.cards} d-flex flex-column justify-content-center border-info card`}>
-            <img src={image} alt="" className="" />
+          <div className={`${styles.card} d-flex flex-column justify-content-center border-info card`}>
+            <img src={image} alt="" className="img-fluid" />
+            <div className="p-2">
             <div className={`${styles.name} `}>{name}</div>
             <div>
-              <div>Last location:</div>
-              <div>{location.name}</div>
+              <div className="fs-6 fw-normal">Last location:</div>
+              <div className="fs-5">{location.name}</div>
             </div>
+          </div>
           </div>
           {(() => {
             if (status === "Dead") {
