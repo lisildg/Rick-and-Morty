@@ -24,12 +24,12 @@ const Episodes = () => {
     })()
   }, [api])
   return (
-    <div className='conteiner'>
+    <div className='container'>
       <div className='row mb-3'>
         <h1 className='text-center mb-3'>
           Episode: {name ==="" ? "Unknoun" : name}
         </h1>
-        <h5 className='text-center mb-4'>
+        <h5 className='text-center'>
          Air date {air_date ==="" ? "Unknoun" : air_date}
         </h5>
       </div>
@@ -41,7 +41,8 @@ const Episodes = () => {
           <InputGroup total={51} name="Episode" setID={setID}/>
         </div>
         <div className='col-lg-8 col-12'> </div>
-        <div className='row'> <Cards page="/episodes/" results={results}/></div>
+        <div className='row'> 
+        <Cards page="/episodes/" results={results}/></div>
       </div>
       
     </div>
