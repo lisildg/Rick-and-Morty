@@ -11,3 +11,8 @@
     outline: off;
 }
 
+.nav-link.active {
+    color: #ff6600; 
+    font-weight: bold;
+  }
+  

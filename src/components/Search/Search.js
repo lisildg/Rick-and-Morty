@@ -1,23 +1,22 @@
 import React from 'react';
-import styles from './Search.module.css';
 
 const Search = ({ setPageNumber, setSearch }) => {
   return (
-    <form className="input-group flex-sm-row flex-column aling-items-center mb-3">
+    <form className="d-flex mb-3">
       <input
         onChange={(e) => {
           setPageNumber(1);
           setSearch(e.target.value);
         }}
         placeholder="Search for Characters"
-        type="text"
-        className={`form-control ${styles.input}`}
+        type="search"
+        className="form-control me-sm-2"
       />
       <button
         onClick={(e) => {
           e.preventDefault();
         }}
-        className={`btn btn-primary fs-5 ${styles.button}`}
+        className="btn btn-primary my-2 my-sm-0"
         type="button"
         id="button-addon2"
       >

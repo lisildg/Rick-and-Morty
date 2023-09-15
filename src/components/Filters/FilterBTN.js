@@ -1,28 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const FilterBTN = ({name, index, items, task, setPageNumber}) => {
+const FilterBTN = ({ name, index, items, task, setPageNumber }) => {
+  const [selectedValue, setSelectedValue] = useState(false);
+
+  const handleRadioChange = () => {
+    setSelectedValue(!selectedValue);
+    if (!selectedValue) {
+      setPageNumber(1);
+      task(items);
+    } else {
+      // Handle deselection if needed
+    }
+  };
+
   return (
     <div>
-         <style jsx>
+      <style jsx>
         {`
-          .x:checked + label {
-            background-color: warning;
-            color: white;
-          }
           input[type="radio"] {
             display: none;
           }
+          input[type="radio"]:checked + label {
+            background-color: #ffc107;
+            border-color: #ffc107;
+            color: white;
+          }
         `}
       </style>
-      <div class="form-check">
-  <input onClick={()=>{
-    setPageNumber(1);
-    task(items)
-  }} class="form-check-input x" type="radio" name={name} id={`${name}-${index}`}/>
-  <label class="btn btn-outline-warning" for={`${name}-${index}`}>{items}   </label>
-</div>
+      <div className="form-check">
+        <input
+          onChange={handleRadioChange}
+          className="form-check-input x"
+          type="radio"
+          name={name}
+          id={`${name}-${index}`}
+          checked={selectedValue}
+        />
+        <label className={`btn btn-outline-warning ${selectedValue ? 'active' : ''}`} htmlFor={`${name}-${index}`}>
+          {items}
+        </label>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default FilterBTN
+export default FilterBTN;
